@@ -1,0 +1,15 @@
+--- /etc/nginx/include/s3gateway.js	2022-10-03 19:46:05.000000000 +0600
++++ /etc/nginx/include/s3gateway.js	2022-10-03 19:47:00.000000000 +0600
+@@ -282,11 +282,7 @@
+     var bucket = process.env['S3_BUCKET_NAME'];
+     var region = process.env['S3_REGION'];
+     var server;
+-    if (s3_style === 'path') {
+-        server = process.env['S3_SERVER'] + ':' + process.env['S3_SERVER_PORT'];
+-    } else {
+-        server = process.env['S3_SERVER'];
+-    }
++    server = process.env['S3_SERVER'];
+     var sigver = process.env['AWS_SIGS_VERSION'];
+ 
+     var signature;
